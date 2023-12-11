@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 01</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Задание:
+        Перепишите данный код на использование классов вместо функций-конструкторов.
+        */
+class Car{
+    #year;
+    #model;
+    constructor(year, model){
+        this.#year=year;
+        this.#model=model;
+    }
+    get year(){
+        if(this.#year===undefined){
+            this.#year=0;
+        }
+
+        return this.#year;
+    }
+    get model(){
+        if(this.#model===undefined){
+            this.#model=0;
+        }
+
+        return this.#model;
+    }
+    set year(value){
+        this.#year=value;
+    }
+    set model(value){
+        this.#model=value;
+    }
+
+    showInfo(){
+        document.write(this.#model+" "+this.#year);
+    }
+}
+let car1=new Car(2020, "Audi Q7");
+car1.showInfo();
+        // function Car(model, yaer) {
+        //     this.yaer = yaer;
+        //     this.model = model;
+        // }
+
+        // Car.prototype.showInfo = function () {
+        //     console.log(this.model + " " + this.yaer);
+        // }
+
+        // let car1 = new Car("Audi", 2018);
+        // car1.showInfo();
+    </script>
+</body>
+
+</html>
